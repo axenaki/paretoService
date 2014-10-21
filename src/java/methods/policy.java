@@ -58,7 +58,8 @@ public class policy {
     }
 
     public void setSi(String Si) {
-        this.Si = Si+" , "+this.Si;
+        if(this.Si.equals("")) this.Si = Si;
+        else this.Si= Si+" , "+this.Si;
     }
 
     public int getRank() {

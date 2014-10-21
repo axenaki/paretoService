@@ -622,7 +622,7 @@ public class paretoMethods {
                 myList.remove(key);
             }
             for (policy myp : fList) {
-                System.out.print(myp +" :");
+                System.out.print(myp + " :");
                 for (String mystr : myp.getSi().split(" , ")) {
                     System.out.print(mystr);
                     if (myList.containsKey(mystr)) {

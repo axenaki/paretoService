@@ -63,6 +63,7 @@ public class Upload extends HttpServlet {
         if (method.equals("nsga2")) {
             System.out.print("nsga2");
             List<policy> theList = paretoMethods.nsga2(mypol, myminmax);
+            Collections.sort(theList, new polComparator2());
             //List<policy> theList2 = paretoMethods.nsga2FH(theList, myminmax);
             request.setAttribute("List3", theList);
         }

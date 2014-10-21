@@ -60,7 +60,7 @@ public static String printListNSGA(List<policy> myList) {
         sb.append("<th>Order</th>");
     //    sb.append("<th>Dominated by category</th>");
         sb.append("<th>Dominated by</th>");
-        sb.append("<th>Dominates</th>");
+        sb.append("<th>Dominated by solutions</th>");
         sb.append("<th>Rank</th>");
         sb.append("</tr>");
         int i=1;
@@ -76,7 +76,12 @@ public static String printListNSGA(List<policy> myList) {
             sb.append("<td>" + String.format(Locale.US, "%.6f",temp.getDistance()) + "</td>");
             sb.append("<td>" + temp.getOrder() + "</td>");
             sb.append("<td>" + temp.getDominated() + "</td>");
-            sb.append("<td>" + temp.getSi() + "</td>");
+            String[] dominatedby=temp.getSi().split(" , ");
+             sb.append("<td>");
+            for(String temp102:dominatedby){
+               sb.append(temp102+"<br>");
+            }
+           sb.append( "</td>");
             sb.append("<td>" + temp.getRank() + "</td>");
             sb.append("</tr>");
         }
