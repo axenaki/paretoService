@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>File Upload</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form method="POST" action="Upload" enctype="multipart/form-data" >
+            <p>Add a .csv or .txt file (criteria seperated by commas) Policy name is only allowed in the begging of the line
+            Precision is defined according to the file number precision</p>
+            <h1>File:
+            <input type="file" name="file" id="file" /> 
+            </h1>
+            <br/>
+            How many criteria are there? Available for 2-12 criteria:
+            <input  type="number" min="2" max="12" name="objectivecount"/>
+            <br/>
+            I've added the Policy's name
+            <input type="checkbox" name="policyname" value="ON">
+            <br/>
+            Add + for maximization and - for minimization per criteria
+            <input type="text" name="minmax" value="" size="12" />
+            </br>
+            <br/>What type of method do you want to be used?
+            </br>
+            <input type="radio" name="method" value="anu1" checked="checked">Multiobjective Optimization<br>
+            <input type="radio" name="method" value="anu2">Multiobjective Optimization Fast Algorithm<br>
+            <input type="radio" name="method" value="fonflem">Fonseca and Flemming<br><!--add one in all domination counts-->
+            <input type="radio" name="method" value="nsga2">NSGA-II<br>
+            <input type="radio" name="method" value="spea">SPEA<br> 
+            <input type="radio" name="method" value="greenw">Greenwood, Hu, and D'Ambrosio<br>
+            <br/>
+            <input type="submit" value="Upload" name="upload" id="upload" />
+            </br>
+        </form>
+       <!-- ADD MESSAGE OF ERROR --> 
+    </body>
+</html>
